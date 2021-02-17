@@ -11,7 +11,7 @@ var world, engine;
 
 
 function setup() {
-	createCanvas(1600, 700);
+	createCanvas(2000, 1000);
 
 
 	engine = Engine.create();
@@ -19,9 +19,9 @@ function setup() {
 
 	ground = new Ground(width/2,690,width,20);
 
-	paper = new Paper(200,320,70);
+	paper = new Paper(200,150,70);
 
-	dustbin= new Dustbin(1200,670);
+	dustbin= new Dustbin(1200,400);
 
 	var render = Render.create({
 		element: document.body,
@@ -40,7 +40,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background(255);
   
   ground.display();
 
@@ -56,7 +56,7 @@ function draw() {
 function keyPressed() {
 	if(keyCode===UP_ARROW) {
 
-	  Matter.Body.applyForce(paper.body, paper.body.position,{x:85,y:-85});
+	  Matter.Body.applyForce(paper.body, paper.body.position,{x:150,y:-250});
 	}
 }
 
